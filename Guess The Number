@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>  //used to generate random number
+#include<time.h>
+int main(){
+    int num,guess , nguesses=1;
+    srand(time(0));
+    num = rand()%100 + 1;   //generate random number between 1 and 100
+    // printf("the number is %d",num); //to print the guessed number
+
+//keep running the loop untill the number is guessed
+do{
+    printf("guess the number between 1 and 200 \n");
+    scanf("%d",&guess);
+
+    if(guess>num){
+        printf("lower number please \n");
+    }
+    else if(guess<num){
+        printf("higher number please \n");
+    }
+    else{
+        printf("you guesses it in %d attempts \n",nguesses);
+    }
+    nguesses++;
+}while(num!=guess);
+
+    return 0;
+}
